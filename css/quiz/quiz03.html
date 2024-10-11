@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { /* basick setting 박스 기본설정 */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: lightgray;
+            height: 400px;
+        }
+        .container:hover .red-box {
+            width: 400px;
+        }
+
+        .container:hover .blue-box {
+            background-color: purple;
+        }
+
+        .container:hover .black-box {
+            background-color: black;
+            margin-left: 200px;
+        }
+
+
+        .green-box:hover {
+            border: 10px solid red;
+            transition-duration: 2s;
+        }
+
+        .yellow-box:hover {
+            border: 10px solid red;
+            transition-duration: 2s;
+        }
+
+        .red-box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 1px solid black;
+            transition-duration: 2s;
+            transition-property: all;
+        }
+
+        .blue-box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid black;
+            transition-duration: 2s;
+            transition-property: all;
+        }
+
+        .black-box {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            border: 1px solid black;
+            transition-duration: 2s;
+            transition-property: all;
+        }
+
+        .green-box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            border: 1px solid black;
+            display:inline-block
+        }
+
+        .yellow-box {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border: 1px solid black;
+            display:inline-block
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="red-box"></div>
+        <div class="blue-box"></div>
+        <div class="black-box"></div>
+        <div class="green-box"></div><div class="yellow-box"></div>
+        </div>
+    </div>
+</body>
+</html>
