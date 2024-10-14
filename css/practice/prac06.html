@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 700px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 50px;
+
+        }
+
+        .content1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .red-box1 {
+            background-color: red;
+            width: 200px;
+            height: 100px;
+        }
+
+        .red-box2 {
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+
+        .content2 {
+            display: flex;
+        }
+
+        .orange-box {
+            background-color: orange;
+            width: 490px;
+            height: 300px;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-content: center;
+            justify-content: center;
+        }
+
+        .black-box {
+            background-color: black;
+            width: 100px;
+            height: 50px;
+            margin: 30px;
+
+            transition-property: all;
+            transition-duration: 1s;
+        }
+
+        .black-box:hover {
+            transform: scale(1.5, 1.5);
+        }
+
+        .green-box {
+            background-color: green;
+            width: 210px;
+            height: 300px;
+        }
+
+        .content3 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .blue-box {
+            background-color: blue;
+            width: 700px;
+            height: 100px;
+        }
+
+        .font-white {
+            text-align: center;
+            align-content: center;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content1">
+            <div class="red-box1 font-white">메인메뉴</div>
+            <div class="red-box2 font-white">마이페이지</div>
+        </div>
+
+        <div class="content2">
+            <div class="orange-box">
+                <div class="black-box"></div>
+                <div class="black-box"></div>
+                <div class="black-box"></div>
+                <div class="black-box"></div>
+                <div class="black-box"></div>
+                <div class="black-box"></div>
+            </div>
+            <div class="green-box font-white">aside</div>
+        </div>
+
+        <div class="content3">
+            <div class="blue-box font-white">footer</div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
