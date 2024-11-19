@@ -81,3 +81,5 @@ check();
 (function oneuse(){
     console.log('1회용 함수');
 })();
+
+//oneuse(); 사용불가
