@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red {
+            color: red;
+        }
+        .blue {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="pid">texttexttext</p>
+
+    <a id="aid" href="http://naver.com">네이버로 링크</a>
+
+    <div id="container">
+
+    </div>
+
+    <p id="target">
+
+    </p>
+
+    <script>
+        //document.getElementById('pid').style.color = 'green';
+        document.getElementById('pid').classList.add('red'); //클래스 추가
+        document.getElementById('pid').classList.add('blue');
+        document.getElementById('pid').classList.remove('blue'); //클래스 삭제
+        document.getElementById('pid').classList.remove('red');
+        document.getElementById('pid').classList.toggle('red'); //클래스 추가/삭제 반복
+
+        const aEle = document.querySelector('#aid'); //aEle 라는 변수선언
+        console.log(aEle.getAttribute("href")); 
+        aEle.setAttribute('href','http://netflix.com'); //넷플릭스주소로 변경
+        aEle.setAttribute('target','_blank'); //새창을 열리게한다.
+
+        //aEle color red    aEle 변수에 red 클래스 적용방법
+        aEle.style.color = 'red';
+        aEle.classList.add('red');  //이 방법을 추천   class='값' + red  class='값 red'
+        aEle.setAttribute('class', 'red'); //  class='red' class='값' -> class ='red'
+
+        aEle.removeAttribute('target'); //새 창으로 가는 클래스속성을 삭제
+
+        
+        const divCon = document.getElementById('container');
+        
+        const newEle = document.createElement("p");   //<p> 태그 생성
+        const txtEle = document.createTextNode("p태그안에 text") //""텍스트를 만듬
+        const attEle = document.createAttribute("class"); //class 속성
+        attEle.value = "blue"; //class속성 값을 blue
+
+        divCon.appendChild(newEle); //div -> p추가
+        newEle.appendChild(txtEle); //p -> 내부에 텍스트 추가
+        newEle.setAttributeNode(attEle); //p -> 속성 추가
+        
+        document.getElementById('target').innerHTML = "<strong>p target text</strong>";
+
+        //createElement("strong")
+        //createTextNode("p target text")
+        //ele.appendChild(text)
+        //target.appendChild(ele)
+
+        //jQuery 라이브러리 활용
+
+        노드삭제방법
+        //부모노드.removeChild.자식노드
+        //document.getElementById('target').removeChild(document.querySelector('strong'));
+
+
+    </script>
+
+</body>
+</html>

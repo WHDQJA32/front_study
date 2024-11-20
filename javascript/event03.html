@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>event03</h1>
+    
+    <button id="btn1" onclick="btn_click()">btn1</button> 
+    <button id="btn2">btn2</button>
+    <button id="btn3">btn3</button>
+
+    <script>
+        //btn1 변수선언부분에 적용 방법1
+        function btn_click(){  
+            alert('버튼 클릭됨');
+        }
+        //아이디 btn2를 클릭하면 함수btn_click 실행할거야 방법2
+        //document.getElementById('btn2').onclick = btn_click;
+
+        //아이디 btn3를 클릭하면 함수btn_click 실행할거야 방법3
+        //document.getElementById('btn3').addEventListener('click', btn_click);
+
+        const btn_btn2 = document.getElementById('btn2');
+
+        document.getElementById('btn2').onclick = function(){ //일회용 함수선언
+            alert('프로퍼티 등록 클릭함수'); 
+        };
+
+        btn_btn2.onmouseover = ()=>{console.log("btn2 마우스가 올라옴");};
+        btn_btn2.onmouseout = ()=>{console.log('btn2 마우스가 나감');};
+
+
+        const btn_btn3 = document.getElementById('btn3');
+
+        document.getElementById('btn3').addEventListener('click', ()=>{ //ON 빠져야한다.
+            alert('이벤트 리스너 함수 바로 정의')
+        });
+
+        btn_btn3.addEventListener('mouseover', ()=>{console.log("btn333 마우스가 올라옴");});
+        btn_btn3.addEventListener('mouseout', ()=>{console.log("btn333 마우스가 나감");});
+
+    </script>
+</body>
+</html>

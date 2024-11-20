@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+.box {
+width:100px;
+height:100px;
+border: 1px solid black;
+}
+.back-red{
+background-color: red;
+}
+.back-blue{
+background-color: blue;
+}
+</style>
+</head>
+<body>
+<div class='box'></div>
+<button onclick="changeColor()">배경색 바꾸기</button>
+
+<script>
+
+    function changeColor(){
+        
+        const input = prompt('1또는 2 입력 1:빨간색 2:파란색')
+        
+        //const 상수 고정값 이후 못바꿈
+        //let 이후에도 추가 선언으로 값 바꿀수 있다.
+        const div_box = document.getElementsByClassName('box')[0];
+        
+        if(input == 1){ //빨간색
+            div_box.classList.add('back-red');
+            div_box.classList.remove('back-blue');
+
+            //div_box.setAttribute('class', 'box back-red');
+
+        }else if(input == 2){ //파란색
+            div_box.classList.add('back-blue');
+            div_box.classList.remove('back-red');
+
+            //div_box.setAttribute('class', 'box back-blue');
+        }else {
+            alert("잘못입력했습니다.")
+        }
+    }
+/*
+    function changeColor1(){
+        if (r1 == 1){
+        return document.getElementsByClassName('box')[0].style = 'back-red';
+        qurrySelector('.box')
+        qurrySelectorAll('.box')
+        }else if (r1 == 2){
+        return document.getElementsByClassName('box').style = 'back-blue';
+        }else{ 
+        return "잘못입력하셨습니다."
+        }
+    }
+    */
+</script>
+</body>
+</html>
