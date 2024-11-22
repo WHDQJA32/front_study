@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button id="btnLogin" onclick="tryLogin()">로그인 시도</button><br>
+
+    <script>
+
+            const input_id = document.getElementById('loginId');
+            const input_pw = document.getElementById('loginPw');
+            const btnLogin = document.getElementById('btnLogin');
+        
+            //로그인 버튼 클릭 이벤트
+        function tryLogin(){
+            document.getElementById('loginId').value = '';
+            document.getElementById('loginPw').value = '';
+        }
+            //키보드 엔터가 입력될 때 비밀번호 란으로 포커스 이동(이벤트) 
+        document.getElementById('loginId').addEventListener('keydown', (event)=>{
+            console.log(event.keyCode);
+            if(event.keyCode == 13){ //입력한 키가 엔터인 조건
+                input_pw.focus();
+            }
+        })
+            //비밀번호 입력칸에서 엔터가 눌리면 로그인 버튼을 누른것과 동일한 기능을 수행
+        input_pw.addEventListener('keydown', (event)=>{
+            if(event.keyCode == 13){
+                btnLogin.click();
+            }
+        })
+        /*
+        document.getElementById('frm').addEventListener('submit', (event)=>{
+        event.preventDefault();
+        });
+        */
+
+    </script>
+</body>
+</html>

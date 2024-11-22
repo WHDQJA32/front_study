@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<style>
+
+.gray {
+    background-color: gray;
+}
+
+.white {
+    background-color: white;
+}
+
+.red-font {
+    color: red;
+}
+
+.black-font {
+    color: black;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div id="main">
+<p id="p1">p1 텍스트</p>
+<p id="p2">p2 텍스트</p>
+</div>
+</div>
+<button onclick="changeMain()">main 배경색 gray로 변경</button>
+<button onclick="changeP1()">p1 글자색 red로 변경</button>
+<button onclick="changeP2()">"p2 텍스트"를 반복</button>
+<button onclick="changeP3()">main 배경색을 white 로 다시 변경</button>
+<button onclick="changeP4()">p1 글자색 다시 black 로 다시 변경</button>
+
+
+<script>
+    
+    const main = document.getElementById('main');
+
+    
+    
+    function changeMain(){
+            main.classList.remove('white');
+            main.classList.toggle('gray'); // main이라는 아이디에 gray 라는 스타일클래스 추가
+        }
+
+    function changeP3(){
+            main.classList.remove('gray');
+            main.classList.toggle('white');
+        }
+
+    function changeP1(){
+            document.getElementById('p1').classList.remove("black-font")
+            document.getElementById('p1').classList.toggle("red-font");
+        }
+
+    function changeP4(){
+            document.getElementById('p1').classList.remove('red-font');
+            document.getElementById('p1').classList.toggle("black-font");
+        }
+    
+    let idx = 0; //인덱스 0으로 선언
+
+    const p2 = document.getElementById('p2');
+
+    function changeP2(){
+
+            const textArr = ["p2 텍스트", "p2 하나", "p2 둘", "p2 셋"];
+
+            idx++;  //idx인덱스 1씩 증가
+
+            if(idx == textArr.length){ //idx 길이까지 가면 인덱스 0자리로 돌아가라
+                idx=0;
+            }
+
+            p2.textContent = textArr[idx]; //p2 아이디를 가진 애를 textArr인덱스 값으로 준다.
+
+
+            /*
+            if(p2.textContent == 'p2 텍스트'){
+                p2.textContent = 'p2 하나';
+            }else if (p2.textContent == 'p2 하나'){
+                p2.textContent = 'p2 둘';
+            }else if (p2.textContent == 'p2 둘'){
+                p2.textContent = 'p2 셋';
+            }else {
+                p2.textContent = 'p2 텍스트';
+            }*/
+            }
+            
+            
+
+</script>
+</body>
+</html>

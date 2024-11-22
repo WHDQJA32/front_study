@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+<body>
+    <form id="frm_login">
+    <input type="text" id="loginId" placeholder="아이디"><br>
+    <input type="password" id="loginPw" placeholder="비밀번호"><br>
+    <button id="btnLogin" type="submit">로그인 시도</button><br>
+</form>
+    <script>
+
+            const input_id = document.getElementById('loginId');
+            const input_pw = document.getElementById('loginPw');
+            const btnLogin = document.getElementById('btnLogin');
+            const frm_login = document.getElementById('frm_login');
+        
+            //로그인 버튼 클릭 이벤트
+        function tryLogin(){
+            document.getElementById('loginId').value = '';
+            document.getElementById('loginPw').value = '';
+        };
+
+            //키보드 엔터가 입력될 때 비밀번호 란으로 포커스 이동(이벤트) 
+        document.getElementById('loginId').addEventListener('keydown', (event)=>{
+            console.log(event.keyCode);
+            if(event.keyCode == 13){ //입력한 키가 엔터인 조건
+            event.preventDefault();
+                input_pw.focus();
+            }
+        });
+
+            //비밀번호 입력칸에서 엔터가 눌리면 로그인 버튼을 누른것과 동일한 기능을 수행
+        input_pw.addEventListener('keydown', (event)=>{
+            if(event.keyCode == 13){
+                btnLogin.click();
+            }
+        });
+
+        frm_login.addEventListener("submit", (event)=>{ //submit 을 막는 방법
+            event.preventDefault();
+            console.log('submit');
+
+            //tryLogin();
+            //유효성검증 (사전필터링)
+
+            /*로그인 시도 버튼을 눌렀을때,
+            만약 비어있는 입력값이 있다면 해당 값을 입력하라고 메시지를 띄우고 해당 입력칸으로 이동시키세요.
+            */
+            if(input_id.value == ''){
+                alert("아이디 입력해주세요");
+                input_id.focus();
+                return;
+            }
+
+            if(input_pw.value.tr == ''){
+                alert("비밀번호 입력해주세요");
+                input_pw.focus();
+                return;
+            }
+
+            //frm_login.submit(); //최종 서브밋 효과로 새로고침
+            tryLogin();
+        });
+
+
+    </script>
+</body>
+</html>
